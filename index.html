@@ -35,7 +35,9 @@
             justify-content: center;
             align-items: center;
             color: white;
+            /* background: #1e1c28; */
         }
+
 
         .calultor-box {
             height: 80vh;
@@ -63,7 +65,6 @@
             align-items: center;
             height: 5rem;
             padding: 0px 1rem;
-            background-color: gainsboro;
         }
 
         .network-icon {
@@ -218,27 +219,27 @@
                     </div>
 
                     <div class="number-icon">
-                        <button class="orange">Ac</button>
-                        <button class="purple"><i class="ri-parentheses-line"></i></button>
-                        <button class="purple"><i class="ri-percent-line"></i></button>
-                        <button class="purple"><i class="ri-divide-line"></i></button>
-                        <button class="white"><i class="ri-number-7"></i></button>
-                        <button class="white"><i class="ri-number-8"></i></button>
-                        <button class="white"><i class="ri-number-9"></i></button>
+                        <button class="orange"onclick="inputHandler('Ac')" >Ac</button>
+                        <button class="purple"onclick="inputHandler('para')" ><i class="ri-parentheses-line"></i></button>
+                        <button class="purple"onclick="inputHandler('%')" ><i class="ri-percent-line"></i></button>
+                        <button class="purple"onclick="inputHandler('/')" ><i class="ri-divide-line"></i></button>
+                        <button class="white" onclick="inputHandler('7')"><i class="ri-number-7"></i></button>
+                        <button class="white"onclick="inputHandler('8')" ><i class="ri-number-8"></i></button>
+                        <button class="white"onclick="inputHandler('9')" ><i class="ri-number-9"></i></button>
 
-                        <button class="purple"><i class="ri-close-line"></i></button>
-                        <button class="white"><i class="ri-number-4"></i></button>
-                        <button class="white"><i class="ri-number-5"></i></button>
-                        <button class="white"><i class="ri-number-6"></i></button>
-                        <button class="purple"><i class="ri-subtract-line"></i></button>
-                        <button class="white"><i class="ri-number-1"></i></button>
-                        <button class="white"><i class="ri-number-2"></i></button>
-                        <button class="white"><i class="ri-number-3"></i></button>
-                        <button class="purple"><i class="ri-add-line"></i></button>
-                        <button class="white"><i class="ri-number-0"></i></button>
-                        <button class="white">.</button>
-                        <button class="white"><i class="ri-delete-back-2-line"></i></button>
-                        <button class="orange"><i class="ri-equal-fill"></i></button>
+                        <button class="purple" onclick="inputHandler('x')" ><i class="ri-close-line"></i></button>
+                        <button class="white" onclick="inputHandler('4')"><i class="ri-number-4"></i></button>
+                        <button class="white" onclick="inputHandler('5')"><i class="ri-number-5"></i></button>
+                        <button class="white" onclick="inputHandler('6')"><i class="ri-number-6"></i></button>
+                        <button class="purple"onclick="inputHandler('-')"><i class="ri-subtract-line"></i></button>
+                        <button class="white" onclick="inputHandler('1')"><i class="ri-number-1"></i></button>
+                        <button class="white" onclick="inputHandler('2')"><i class="ri-number-2"></i></button>
+                        <button class="white" onclick="inputHandler('3')"><i class="ri-number-3"></i></button>
+                        <button class="purple"onclick="inputHandler('+')"><i class="ri-add-line"></i></button>
+                        <button class="white"onclick ="inputHandler('0')"><i class="ri-number-0"></i></button>
+                        <button class="white"onclick="inputHandler('.')">.</button>
+                        <button class="white"onclick="inputHandler('bs')"><i class="ri-delete-back-2-line"></i></button>
+                        <button class="orange"onclick="inputHandler('=')"><i class="ri-equal-fill"></i></button>
                     </div>
                 </div>
             </div>
@@ -248,6 +249,7 @@
     <script>
         // here we will make clock 
         let clock = document.querySelector('.clock');
+        let display = document.querySelector('.display');
         UpdateDate();
         function UpdateDate(){
             let Date_create ={
@@ -262,6 +264,138 @@
             clock.innerText =  `${Date_create.hours}.${Date_create.minutes}.${Date_create.second}`      
           }
           setInterval(UpdateDate,1000)
+
+
+          function inputHandler( a ){
+            let op = '*/+-'
+            let value = display.innerText;
+            switch(a){
+             case 'Ac':{
+                value = ""
+                  display.innerText = value;
+                  break;
+             }
+             case '1':{
+                value += '1';
+                display.innerText = value;
+                break;
+             }
+             case '2':{
+                value += '2';
+                display.innerText = value;
+                break;
+             }
+             case '3':{
+                value += '3';
+                display.innerText = value;
+                break;
+             }
+             case '4':{
+                value += '4';
+                display.innerText = value;
+                break;
+             }
+             case '5':{
+                value += '5';
+                display.innerText = value;
+                break;
+             }
+             case '6':{
+                value += '6';
+                display.innerText = value;
+                break;
+             }
+             case '7':{
+                value += '7';
+                display.innerText = value;
+                break;
+             }
+             case '8':{
+                value += '8';
+                display.innerText = value;
+                break;
+             }
+             case '9':{
+                value += '9';
+                display.innerText = value;
+                break;
+             }
+             case '0':{
+                value += '0';
+                display.innerText = value;
+                break;
+             }
+             case '.':{
+                value += '.';
+                display.innerText = value;
+                break;
+             }
+             case "Enter":{
+                value = eval(value);
+
+display.innerText = value;
+break;
+             }
+             case '=':{
+                value = eval(value);
+
+                display.innerText = value;
+                break;
+             }
+             
+             case '+':{
+                value += '+';
+                console.log(typeof(value))
+                l = value.length;
+                value.slice(0, l)
+                display.innerText = value;
+                // console.log(    value.slice(l-1, l).)
+                break;
+
+             }
+             case '-':{
+                value += '-';
+                display.innerText = value;
+                break;
+             }
+             case '/':{
+                value += '/';
+                display.innerText = value;
+                break;
+             }
+             case '*':{
+                value += '*';
+                display.innerText = value;
+                break;
+             }
+             case 'x':{
+                value += '*';
+                display.innerText = value;
+                break;
+             }
+             case '%':{
+                value += '%';
+                display.innerText = value;
+             }
+             case "Backspace":{
+                value = value.slice(0,-1)
+                display.innerText = value
+                break;
+             }
+             case 'bs':{
+                console.log(value)
+                value = value.slice(0,-1)
+                console.log(value)
+                display.innerText = value
+             }
+            
+
+            }
+          }
+        document.addEventListener('keydown',(e)=>{
+            console.log(e.key)
+            inputHandler(e.key);
+        })
     </script>
 </body>
 
