@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="script.js"></script>
+    <title>Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --black: black;
+            --white: white;
+
+        }
+
+        html {
+            font-size: 62.5%;
+
+        }
+
+        .container {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .calultor-box {
+            height: 80vh;
+            width: 33rem;
+            /* background-color: white; */
+            border-radius: 20px;
+            display: flex;
+            box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
+
+            color: black;
+            flex-direction: column;
+            border-radius: 20px 20px 20px 20px;
+            overflow: hidden;
+        }
+
+        .calultor-box {
+
+            /* border: 1px solid black; */
+        }
+
+        .top-calculater {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 5rem;
+            padding: 0px 1rem;
+            background-color: gainsboro;
+        }
+
+        .network-icon {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .network-icon i {
+            color: var(--black);
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+
+        .clock-display {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .button-btn {}
+
+        .calc-screen {
+            width: 100%;
+            height: 33rem;
+            overflow: hidden;
+            /* border-radius: 20px 20px 0px 0px; */
+            /* border: 2px solid  black; */
+            z-index: 99;
+
+
+        }
+
+        .display-screen {
+            width: 100%;
+            height: 16rem;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            padding: 20px 10px;
+            background-color: #ffffff;
+
+        }
+
+        .calulator-btn {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            background-color: #f2f1f6;
+            /* border: 1px solid red; */
+            /* background-color: black; */
+
+        }
+
+        .display-screen h1 {
+            font-size: 6rem;
+        }
+
+        button {
+            cursor: pointer;
+        }
+        .orange {
+            background-color: #ff8c00;
+            color: white
+        }
+        .purple{
+           background-color: #525298;
+           color: white;
+        }
+        .white{
+            background-color: white;
+            color: black;
+        }
+        button :hover{
+            /* box-shadow:  0px 0px 0px 2px rgba(0,0,0,0.2); */
+        }
+
+        .number-icon {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            /* align-items: center; */
+            /* background-color: red; */
+            /* justify-content: center; */
+            gap: 0.5rem;
+
+        }
+
+        .number-icon button {
+            width: 7rem;
+            height: 5rem;
+            /* background-color: white; */
+            border-radius: 10px;
+            font-size: 2rem;
+            border: none;
+
+        }
+
+        .special-icon {
+            padding: 10px 0px;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            gap: 0rem;
+            /* padding: 1rem 4rem; */
+            /* background-color: red; */
+           
+        }
+
+        .special-icon button {
+            height: 5rem;
+            width: 5.5rem;
+            border: none;        
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calultor-box">
+            <div class="calc-screen">
+
+
+                <div class="top-calculater">
+                    <div class="clock-display">
+                        <p class="clock">11.22.22</p>
+                    </div>
+
+                    <div class="network-icon">
+                        <span class="network-icon"><i class="ri-stairs-fill"></i></span>
+                        <span class="wifi-icon"><i class="ri-wifi-fill"></i></span>
+                        <span class="battery-icon"><i class="ri-battery-fill"></i></span>
+                    </div>
+
+                </div>
+                <div class="display-screen">
+                    <h1 class="display">
+                        8888
+                    </h1>
+                </div>
+
+
+            </div>
+            <div class="calulator-btn">
+                <div class="button-btn">
+                    <div class="special-icon">
+                        <button class="root" onclick="num1"><i class="ri-square-root"></i></button>
+                        <button class="para"><i class="ri-paragraph"></i></button>
+                        <button class="power"><i class="ri-arrow-up-s-line"></i></button>
+                        <button class="Not-eqal">!</button>
+                        <button class=""><i class="ri-arrow-down-s-line"></i></button>
+                    </div>
+
+                    <div class="number-icon">
+                        <button class="orange">Ac</button>
+                        <button class="purple"><i class="ri-parentheses-line"></i></button>
+                        <button class="purple"><i class="ri-percent-line"></i></button>
+                        <button class="purple"><i class="ri-divide-line"></i></button>
+                        <button class="white"><i class="ri-number-7"></i></button>
+                        <button class="white"><i class="ri-number-8"></i></button>
+                        <button class="white"><i class="ri-number-9"></i></button>
+
+                        <button class="purple"><i class="ri-close-line"></i></button>
+                        <button class="white"><i class="ri-number-4"></i></button>
+                        <button class="white"><i class="ri-number-5"></i></button>
+                        <button class="white"><i class="ri-number-6"></i></button>
+                        <button class="purple"><i class="ri-subtract-line"></i></button>
+                        <button class="white"><i class="ri-number-1"></i></button>
+                        <button class="white"><i class="ri-number-2"></i></button>
+                        <button class="white"><i class="ri-number-3"></i></button>
+                        <button class="purple"><i class="ri-add-line"></i></button>
+                        <button class="white"><i class="ri-number-0"></i></button>
+                        <button class="white">.</button>
+                        <button class="white"><i class="ri-delete-back-2-line"></i></button>
+                        <button class="orange"><i class="ri-equal-fill"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // here we will make clock 
+        let clock = document.querySelector('.clock');
+        UpdateDate();
+        function UpdateDate(){
+            let Date_create ={
+                hours :"",
+                minutes:"",
+                second :""
+            }
+            const date = new Date();
+            Date_create.hours = date.getHours();
+            Date_create.minutes = date.getMinutes();
+            Date_create.second = date.getSeconds();
+            clock.innerText =  `${Date_create.hours}.${Date_create.minutes}.${Date_create.second}`      
+          }
+          setInterval(UpdateDate,1000)
+    </script>
+</body>
+
+</html>
